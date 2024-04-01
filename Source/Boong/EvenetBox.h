@@ -7,6 +7,11 @@
 #include "GameFramework/Actor.h"
 #include "EvenetBox.generated.h"
 
+
+//블루프린트와 연결되는 델리게이트
+DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnCompleteSignature);
+
+
 UCLASS()
 class BOONG_API AEvenetBox : public AActor
 {
@@ -27,13 +32,25 @@ protected:
 
 public:	
 
+	
+
 
 	UPROPERTY(VisibleAnyWhere, BlueprintReadOnly)
 	TObjectPtr<UBoxComponent> TriggerBox;
 
 
+public:
+
+
+	//블루프린트에 델리게이트 노출
+	UPROPERTY(BlueprintAssignable)
+	FOnCompleteSignature OnComplete;
+
+
 private:
 
+
+	//곂칠 시
 	UFUNCTION()
 	void OnPlayerBeginOverlap
 		(UPrimitiveComponent* OverlappedComp,
@@ -43,6 +60,7 @@ private:
 		bool bFromSweep,
 		const FHitResult& SweepResult);
 
+	//곂친 후 벗어날 시
 	UFUNCTION()
 	void OnPlayerEndOverlap(
 		class UPrimitiveComponent* OverlappedComp,
