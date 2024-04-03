@@ -14,4 +14,12 @@ class BOONG_API ABoongGameModeBase : public AGameModeBase
 {
 	GENERATED_BODY()
 	
+public :
+	virtual void ReSpawn();
+
+protected:
+	virtual void BeginPlay() override;
+	
+private:
+
 };
