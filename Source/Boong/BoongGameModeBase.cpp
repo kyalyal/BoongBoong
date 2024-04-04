@@ -5,8 +5,16 @@
 
  void ABoongGameModeBase::ReSpawn()
 {
-     int a = 0;
-     int b[3];
+
+  
+  /*   int a = 0;
+     int b[3];*/
      
      
 }
+
+ void ABoongGameModeBase::BeginPlay()
+ {
+
+     Super::BeginPlay();
+ }
