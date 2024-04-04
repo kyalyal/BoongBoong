@@ -15,9 +15,12 @@ class BOONG_API ABoongGameModeBase : public AGameModeBase
 	GENERATED_BODY()
 public :
 	int32 Speed = 0;//카트 속력
+
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Damage")
-	float PlayTime = 0f; // 플레이 타임 시간
-	float CountDownTime = 0f; // 카운트 타임 시간
+	float PlayTime = 0.f; // 플레이 타임 시간
+
+	float CountDownTime = 0.f; // 카운트 타임 시간
+
 	bool BoolStopPlayerTime = false; // 플레이 타임을 멈추는 BOOL타입 변수
 public :
 	//플레이어 재생성

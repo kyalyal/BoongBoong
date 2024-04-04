@@ -21,7 +21,7 @@ void ABoongGameModeBase::ChangeLevelScene()
 
  void ABoongGameModeBase::SetTimerPlusPlayTime()
  {
-     GetWorldTimerManager().SetTimer(TimerHandle, this, &ABoongGameModeBase::PlusPlayTimer, 0.1f, true);
+     //GetWorldTimerManager().SetTimer(TimerHandle, this, &ABoongGameModeBase::PlusPlayTimer, 0.1f, true);
  }
 
  void ABoongGameModeBase::PlusPlayTimer()
