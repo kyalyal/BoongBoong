@@ -14,7 +14,7 @@ AEvenetBox::AEvenetBox()
 	TriggerBox->SetBoxExtent(FVector(100.f, 100.f, 100.f));
 
 
-	TriggerBox->SetCollisionProfileName(TEXT("BoongCollision"));
+	TriggerBox->SetCollisionProfileName(TEXT("OverlapAll"));
 }
 
 // Called when the game starts or when spawned
