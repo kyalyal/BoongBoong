@@ -23,21 +23,27 @@ public :
 
 	bool BoolStopPlayerTime = false; // 플레이 타임을 멈추는 BOOL타입 변수
 public :
+	//메인레벨로 전환한다.
+	UFUNCTION(BlueprintCallable)
+		virtual void ChangeMainLevel();
+	//처음시작레벨로 전환한다.
+	UFUNCTION(BlueprintCallable)
+		virtual void ChangeStartLevel();
 	//플레이어 재생성
 	virtual void ReSpawn();
-	
+
 	//Level을 바꾸기 시작씬에서 메인씬으로 이동
-	virtual void ChangeLevelScene();
-	
+	virtual void ChangeLevelScene(FName LevelName);
+
 	//플레이어의 시간을 멈추기
 	virtual void StopPlayerTimer();
-	
+
 	//SetTimer함수를 0.1동안 마다 PlusPlayTime을 호출한다.
 	virtual void SetTimerPlusPlayTime();
-	
+
 	//플레이어 시간이 흘러감
 	virtual void PlusPlayTimer();
-	
+
 	//카운타운 타임이 진행됨
 	virtual void CountDownTimer();
 
