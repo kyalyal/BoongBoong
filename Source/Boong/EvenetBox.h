@@ -36,10 +36,6 @@ public:
 	UPROPERTY(VisibleAnyWhere, BlueprintReadOnly)
 	TObjectPtr<UBoxComponent> TriggerBox;
 
-
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	FString CarName;
-
 public:
 
 
@@ -53,7 +49,7 @@ private:
 
 	//Å»ƒ• Ω√
 	UFUNCTION()
-	void OnPlayerBeginOverlap
+	virtual void OnPlayerBeginOverlap
 		(UPrimitiveComponent* OverlappedComp,
 		AActor* OtherActor,
 		UPrimitiveComponent* OtherComp,
@@ -63,7 +59,7 @@ private:
 
 	//Å»ƒ£ »ƒ π˛æÓ≥Ø Ω√
 	UFUNCTION()
-	void OnPlayerEndOverlap(
+	virtual void OnPlayerEndOverlap(
 		class UPrimitiveComponent* OverlappedComp,
 		class AActor* OtherActor,
 		class UPrimitiveComponent* OtherComp,
