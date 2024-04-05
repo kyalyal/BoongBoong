@@ -3,31 +3,16 @@
 
 #include "BoongGameModeBase.h"
 
-#include "Kismet/GameplayStatics.h"
-
-void ABoongGameModeBase::ChangeMainLevel()
-{
-    //상기 LSK_Test_Start_Level // 건주Main_Circit
-    ChangeLevelScene("Main_Circit");
-}
-
-void ABoongGameModeBase::ChangeStartLevel()
-{
-    ChangeLevelScene("LSK_Test_Start_Level");
-}
-
-void ABoongGameModeBase::ReSpawn()
+ void ABoongGameModeBase::ReSpawn()
 {
 
     
      
 }
 
-void ABoongGameModeBase::ChangeLevelScene(FName LevelName)
+void ABoongGameModeBase::ChangeLevelScene()
  {
-  
-        UGameplayStatics::OpenLevel(this, LevelName);
-     
+   
  }
 
  void ABoongGameModeBase::StopPlayerTimer()
@@ -36,7 +21,7 @@ void ABoongGameModeBase::ChangeLevelScene(FName LevelName)
 
  void ABoongGameModeBase::SetTimerPlusPlayTime()
  {
-    
+     //GetWorldTimerManager().SetTimer(TimerHandle, this, &ABoongGameModeBase::PlusPlayTimer, 0.1f, true);
  }
 
  void ABoongGameModeBase::PlusPlayTimer()
@@ -49,6 +34,6 @@ void ABoongGameModeBase::ChangeLevelScene(FName LevelName)
  }
 
  void ABoongGameModeBase::BeginPlay()
- {    
-     //Super::BeginPlay();    
+ {
+     Super::BeginPlay();
  }
