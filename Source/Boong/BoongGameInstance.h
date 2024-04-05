@@ -30,7 +30,7 @@ public:
 	// 플레이어 레벨
 	int32 PlayerLevel;
 	// 플레이어 체력
-	int32 PlayerLife = 100;
+	int32 Score = 100;
 
 	GENERATED_BODY()
 
