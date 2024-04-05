@@ -25,12 +25,17 @@ class BOONG_API UBoongGameInstance : public UGameInstance
 {
 public:
 	// 선택한 자동차 저장 변수
+
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite)
 	FString CarName;
 	// 플레이어 레벨
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite)
 	int32 PlayerLevel;
 	// 플레이어 체력
-	int32 PlayerLife = 100;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite)
+	int32 Score = 100;
 
 	GENERATED_BODY()
 
