@@ -1,0 +1,9 @@
+diff a/Config/DefaultEngine.ini b/Config/DefaultEngine.ini	(rejected hunks)
+@@ -1,7 +1,6 @@
+ 
+ 
+ [/Script/EngineSettings.GameMapsSettings]
+-GameDefaultMap=/Engine/Maps/Templates/OpenWorld
+ GameDefaultMap=/Game/SW/Test1.Test1
+ GlobalDefaultGameMode=/Game/SW/Blueprint/SW_BP_CartGameMode.SW_BP_CartGameMode_C
+ GameInstanceClass=/Game/Gj/BluePrint/BP_BoongGameInstance.BP_BoongGameInstance_C

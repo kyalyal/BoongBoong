@@ -33,11 +33,12 @@ protected:
 public:	
 
 	
-
-
 	UPROPERTY(VisibleAnyWhere, BlueprintReadOnly)
 	TObjectPtr<UBoxComponent> TriggerBox;
 
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	FString CarName;
 
 public:
 
