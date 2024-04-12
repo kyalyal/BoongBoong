@@ -85,10 +85,10 @@ public :
 	virtual void TestTest();
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "TimerValue")
-	TSubclassOf<UUserWidget> MainWidget;
+	class TSubclassOf<UUserWidget> MainWidget;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "TimerValue")
-	UUserWidget* CurrentWidget;
+	class UUserWidget* CurrentWidget;
 	
 protected:
 	virtual void BeginPlay() override;
