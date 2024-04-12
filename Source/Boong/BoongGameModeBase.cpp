@@ -1,4 +1,4 @@
-// Copyright Epic Games, Inc. All Rights Reserved.
+ï»¿// Copyright Epic Games, Inc. All Rights Reserved.
 
 
 #include "BoongGameModeBase.h"
@@ -6,57 +6,57 @@
 #include "Kismet/GameplayStatics.h"
 #include "Blueprint/UserWidget.h"
 
-//¸ŞÀÎ·¹º§·Î ÀüÈ¯ÇÑ´Ù.
+//Â¸ÃÃ€ÃÂ·Â¹ÂºÂ§Â·Ã Ã€Ã¼ÃˆÂ¯Ã‡Ã‘Â´Ã™.
 void ABoongGameModeBase::ChangeMainLevel()
 {
-    //»ó±â LSK_Test_Start_Level // °ÇÁÖMain_Circit
+    //Â»Ã³Â±Ã¢ LSK_Test_Start_Level // Â°Ã‡ÃÃ–Main_Circit
     UGameplayStatics::OpenLevel(this, "Main_Circit");
 }
-//Ã³À½½ÃÀÛ·¹º§·Î ÀüÈ¯ÇÑ´Ù.
+//ÃƒÂ³Ã€Â½Â½ÃƒÃ€Ã›Â·Â¹ÂºÂ§Â·Ã Ã€Ã¼ÃˆÂ¯Ã‡Ã‘Â´Ã™.
 void ABoongGameModeBase::ChangeStartLevel()
 {
     UGameplayStatics::OpenLevel(this,"LSK_Test_Start_Level");
 }
-//ÇÃ·¹ÀÌ¾î »ı¼º
+//Ã‡ÃƒÂ·Â¹Ã€ÃŒÂ¾Ã® Â»Ã½Â¼Âº
 void ABoongGameModeBase::ReSpawn()
 {
     
 }
-//Á¦ÇÑ½Ã°£ Å¸ÀÌ¸Ó¸¦ ½ÇÇàÇÑ´Ù.
+//ÃÂ¦Ã‡Ã‘Â½ÃƒÂ°Â£ Ã…Â¸Ã€ÃŒÂ¸Ã“Â¸Â¦ Â½Ã‡Ã‡Ã Ã‡Ã‘Â´Ã™.
 void ABoongGameModeBase::StartTimer()
 {
     GetWorldTimerManager().SetTimer(TimerHandle, this, &ABoongGameModeBase::CalculateTimer, 1.0f, true, 1.0f);
 }
-//Å¸ÀÌ¸Ó ÇÚµéÀ» ¸ØÃß°Å³ª ÃÊ±âÈ­ÇÒ ¶§ »ç¿ëÇÑ´Ù.
+//Ã…Â¸Ã€ÃŒÂ¸Ã“ Ã‡ÃšÂµÃ©Ã€Â» Â¸Ã˜ÃƒÃŸÂ°Ã…Â³Âª ÃƒÃŠÂ±Ã¢ÃˆÂ­Ã‡Ã’ Â¶Â§ Â»Ã§Â¿Ã«Ã‡Ã‘Â´Ã™.
  void ABoongGameModeBase::StopPlayerTimer()
  {
      GetWorldTimerManager().ClearTimer(TimerHandle);
  }
 
- //Å¸ÀÌ¸ÓÀÇ ½Ã°£À» °è»êÇÏ¿© ºĞ°ú ÃÊÀÇ º¯¼ö¿¡ °ªÀ» »ğÀÔÇÑ´Ù.
+ //Ã…Â¸Ã€ÃŒÂ¸Ã“Ã€Ã‡ Â½ÃƒÂ°Â£Ã€Â» Â°Ã¨Â»ÃªÃ‡ÃÂ¿Â© ÂºÃÂ°Ãº ÃƒÃŠÃ€Ã‡ ÂºÂ¯Â¼Ã¶Â¿Â¡ Â°ÂªÃ€Â» Â»Ã°Ã€Ã”Ã‡Ã‘Â´Ã™.
  void ABoongGameModeBase::CalculateTimer()
  {
-     // ÃÑÁ¦ÇÑ ½Ã°£ÀÌ 1ÃÊ¾¿ °¨¼ÒÇÑ´Ù.
+     // ÃƒÃ‘ÃÂ¦Ã‡Ã‘ Â½ÃƒÂ°Â£Ã€ÃŒ 1ÃƒÃŠÂ¾Â¿ Â°Â¨Â¼Ã’Ã‡Ã‘Â´Ã™.
      PlayTime--;
 
-     // ºĞ°ú ÃÊ °è»êÇÏ¿© º¯¼ö¿¡ »ğÀÔÇÑ´Ù.
+     // ÂºÃÂ°Ãº ÃƒÃŠ Â°Ã¨Â»ÃªÃ‡ÃÂ¿Â© ÂºÂ¯Â¼Ã¶Â¿Â¡ Â»Ã°Ã€Ã”Ã‡Ã‘Â´Ã™.
      PlayTimeMin = PlayTime / 60;
      PlayTimeSec = PlayTime % 60;
      UE_LOG(LogTemp, Log, TEXT("Remaining Time: %02d:%02d"), PlayTimeMin, PlayTimeSec);
-     // Å¸ÀÌ¸Ó Á¾·á ½Ã ½Ç°İÃ³¸®ÇÏ°í Å¸ÀÌ¸Ó ÇÚµéÀ» ÃÊ±âÈ­ÇÑ´Ù.
+     // Ã…Â¸Ã€ÃŒÂ¸Ã“ ÃÂ¾Â·Ã¡ Â½Ãƒ Â½Ã‡Â°ÃÃƒÂ³Â¸Â®Ã‡ÃÂ°Ã­ Ã…Â¸Ã€ÃŒÂ¸Ã“ Ã‡ÃšÂµÃ©Ã€Â» ÃƒÃŠÂ±Ã¢ÃˆÂ­Ã‡Ã‘Â´Ã™.
      if (PlayTime <= 0) 
      {
          TestDisqualification();
          StopPlayerTimer();
      }
  }
- //PlayTimeÀ» 10ºĞÀ¸·Î ÃÊ±âÈ­ÇÑ´Ù.
+ //PlayTimeÃ€Â» 10ÂºÃÃ€Â¸Â·Ã ÃƒÃŠÂ±Ã¢ÃˆÂ­Ã‡Ã‘Â´Ã™.
  void ABoongGameModeBase::ResetPlayTime()
  {
      PlayTime = 600;
  }
 
- //5Á¡ÀÌ °¨Á¡ÀÌ µÇ°í ½Ç°İÁ¡¼ö 60Á¡º¸´Ù ³·¾ÆÁö¸é ½Ç°İÃ³¸®°¡ µÈ´Ù.
+ //5ÃÂ¡Ã€ÃŒ Â°Â¨ÃÂ¡Ã€ÃŒ ÂµÃ‡Â°Ã­ Â½Ã‡Â°ÃÃÂ¡Â¼Ã¶ 60ÃÂ¡ÂºÂ¸Â´Ã™ Â³Â·Â¾Ã†ÃÃ¶Â¸Ã© Â½Ã‡Â°ÃÃƒÂ³Â¸Â®Â°Â¡ ÂµÃˆÂ´Ã™.
  void ABoongGameModeBase::MinusPlayerScore()
  {
      PlayerScore -= 5;
@@ -68,48 +68,48 @@ void ABoongGameModeBase::StartTimer()
 
  }
 
- //ÇÃ·¹ÀÌ¾îÀÇ Á¡¼ö°¡ 100Á¡À¸·Î ¸®¼ÂµÈ´Ù.
+ //Ã‡ÃƒÂ·Â¹Ã€ÃŒÂ¾Ã®Ã€Ã‡ ÃÂ¡Â¼Ã¶Â°Â¡ 100ÃÂ¡Ã€Â¸Â·Ã Â¸Â®Â¼Ã‚ÂµÃˆÂ´Ã™.
  void ABoongGameModeBase::ResetPlayerScore()
  {
      PlayerScore = 100;
  }
 
- //µµÂø¼±¿¡ µµ´Ş½Ã ÇÃ·¹ÀÌ¾î°¡ ÇÕ°İÀÎÁö ºÒÇÕ°İÀÎÁö ÆÇ´ÜÇÑ´Ù. 
+ //ÂµÂµÃ‚Ã¸Â¼Â±Â¿Â¡ ÂµÂµÂ´ÃÂ½Ãƒ Ã‡ÃƒÂ·Â¹Ã€ÃŒÂ¾Ã®Â°Â¡ Ã‡Ã•Â°ÃÃ€ÃÃÃ¶ ÂºÃ’Ã‡Ã•Â°ÃÃ€ÃÃÃ¶ Ã†Ã‡Â´ÃœÃ‡Ã‘Â´Ã™. 
  void ABoongGameModeBase::JudgePass()
  {
      StopPlayerTimer();
-     if (PlayerScore >= 80) //Á¡¼ö 80Á¡ÀÌ ³ÑÀ¸¸é Åë°ú
+     if (PlayerScore >= 80) //ÃÂ¡Â¼Ã¶ 80ÃÂ¡Ã€ÃŒ Â³Ã‘Ã€Â¸Â¸Ã© Ã…Ã«Â°Ãº
      {
          PlayerPass();
      }
-     else //¾Æ´Ò°æ¿ì ºÒÇÕ°İÃ³¸®
+     else //Â¾Ã†Â´Ã’Â°Ã¦Â¿Ã¬ ÂºÃ’Ã‡Ã•Â°ÃÃƒÂ³Â¸Â®
      {
          PlayerFail();
      }
  }
- //#ºí·çÇÁ¸°Æ®·Î ÇØ´ç UI¸¦ °¡Á®¿Í¼­ ¼³Á¤ÇØ¾ßÇÔ
- //ÇÃ·¹ÀÌ¾î°¡ ÇÕ°İ ÇßÀ» ¶§
+ //#ÂºÃ­Â·Ã§Ã‡ÃÂ¸Â°Ã†Â®Â·Ã Ã‡Ã˜Â´Ã§ UIÂ¸Â¦ Â°Â¡ÃÂ®Â¿ÃÂ¼Â­ Â¼Â³ÃÂ¤Ã‡Ã˜Â¾ÃŸÃ‡Ã”
+ //Ã‡ÃƒÂ·Â¹Ã€ÃŒÂ¾Ã®Â°Â¡ Ã‡Ã•Â°Ã Ã‡ÃŸÃ€Â» Â¶Â§
  void ABoongGameModeBase::PlayerPass()
  {
     
  }
- //ÇÃ·¹ÀÌ¾î°¡ ºÒÇÕ°İ ÇßÀ» ¶§
+ //Ã‡ÃƒÂ·Â¹Ã€ÃŒÂ¾Ã®Â°Â¡ ÂºÃ’Ã‡Ã•Â°Ã Ã‡ÃŸÃ€Â» Â¶Â§
  void ABoongGameModeBase::PlayerFail()
  {
 
  }
 
- //½ÃÇè ½Ç°İÃ³¸®°¡ µÇ¾úÀ» ¶§
+ //Â½ÃƒÃ‡Ã¨ Â½Ã‡Â°ÃÃƒÂ³Â¸Â®Â°Â¡ ÂµÃ‡Â¾ÃºÃ€Â» Â¶Â§
  void ABoongGameModeBase::TestDisqualification()
  {
 
  }
- /*
+ 
  void ABoongGameModeBase::TestTest()
  {
      CurrentWidget = CreateWidget<UUserWidget>(GetWorld(), MainWidget);
      CurrentWidget->AddToViewport();
- }*/
+ }
  void ABoongGameModeBase::BeginPlay()
  {    
      Super::BeginPlay();

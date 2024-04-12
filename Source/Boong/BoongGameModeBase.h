@@ -80,14 +80,16 @@ public :
 	//실격처리가 되었을 때
 	virtual void TestDisqualification();
 
-	/*
+	
 	UFUNCTION(BlueprintCallable)
 	virtual void TestTest();
+
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "TimerValue")
 	TSubclassOf<UUserWidget> MainWidget;
+
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "TimerValue")
 	UUserWidget* CurrentWidget;
-	*/
+	
 protected:
 	virtual void BeginPlay() override;
 
