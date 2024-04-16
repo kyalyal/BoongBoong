@@ -94,18 +94,14 @@ void ABoongGameModeBase::StartTimer()
 
  }
 
-
- void ABoongGameModeBase::TestDisqualification()
- {
-
- }
  
- void ABoongGameModeBase::TestTest()
+ void ABoongGameModeBase::TestTest(TSubclassOf<UUserWidget> newWidgetClass)
  {
 
-    // CurrentWidget = CreateWidget<UUserWidget>(GetWidgetFromName(TEXT("WBP_Clear"));
-     //CurrentWidget->AddToViewport();
+     CurrentWidget = CreateWidget<UUserWidget>(GetWorld(), newWidgetClass);
+     CurrentWidget->AddToViewport();
  }
+
  void ABoongGameModeBase::BeginPlay()
  {    
      Super::BeginPlay();

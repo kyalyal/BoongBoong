@@ -84,17 +84,18 @@ public :
 
 	
 	UFUNCTION(BlueprintCallable)
-	virtual void TestTest();
+	virtual void TestTest(TSubclassOf<UUserWidget> newWidgetClass);
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "TimerValue")
 	TSubclassOf<UUserWidget> MainWidget;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "TimerValue")
 	UUserWidget* CurrentWidget;
-	
+
 protected:
 	virtual void BeginPlay() override;
-
+	
+	
 	
 private:
 	
