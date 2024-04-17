@@ -78,9 +78,8 @@ public :
 	//플레이어가 불합격 했을 때
 	virtual void PlayerFail();
 	
-	UFUNCTION(BlueprintCallable)
+	
 	//실격처리가 되었을 때
-	virtual void TestDisqualification();
 
 	
 	UFUNCTION(BlueprintCallable)

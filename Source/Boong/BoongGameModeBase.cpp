@@ -42,7 +42,6 @@ void ABoongGameModeBase::StartTimer()
 
      if (PlayTime <= 0) 
      {
-         TestDisqualification();
          StopPlayerTimer();
      }
  }
@@ -58,7 +57,6 @@ void ABoongGameModeBase::StartTimer()
      PlayerScore -= 5;
      if (PlayerScore < 60) 
      {
-         TestDisqualification();
          StopPlayerTimer();
      }
 
