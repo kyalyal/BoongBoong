@@ -101,7 +101,8 @@ void ABoongGameModeBase::StartTimer()
  }
 
  void ABoongGameModeBase::TestCode()
- { 
+ {
+     ///Script/UMGEditor.WidgetBlueprint'/Game/SW/Blueprint/DeadUi.DeadUi'
      FStringClassReference MyWidget = (TEXT("/ Script / UMGEditor.WidgetBlueprint'/Game/SW/Blueprint/DeadUi.DeadUi_C'"));
      
      UClass* SwWidget = MyWidget.TryLoadClass<UUserWidget>();
