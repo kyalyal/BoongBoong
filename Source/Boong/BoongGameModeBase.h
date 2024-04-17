@@ -15,6 +15,7 @@ class BOONG_API ABoongGameModeBase : public AGameModeBase
 	GENERATED_BODY()
 public :
 
+	ABoongGameModeBase();
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "TimerValue")
 	int32 PlayerScore = 100; // 플레이어 점수
@@ -78,18 +79,15 @@ public :
 	//플레이어가 불합격 했을 때
 	virtual void PlayerFail();
 	
-	
-	//실격처리가 되었을 때
-
-	
 	UFUNCTION(BlueprintCallable)
-	virtual void TestTest(TSubclassOf<UUserWidget> newWidgetClass);
-
+	virtual void TestCode();
+	
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "TimerValue")
 	TSubclassOf<UUserWidget> MainWidget;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "TimerValue")
 	UUserWidget* CurrentWidget;
+
 
 protected:
 	virtual void BeginPlay() override;

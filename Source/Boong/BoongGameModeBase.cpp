@@ -6,6 +6,12 @@
 #include "Kismet/GameplayStatics.h"
 #include "Blueprint/UserWidget.h"
 
+ABoongGameModeBase::ABoongGameModeBase()
+{
+
+    
+
+}
 
 
 void ABoongGameModeBase::ChangeMainLevel()
@@ -85,23 +91,51 @@ void ABoongGameModeBase::StartTimer()
 
  void ABoongGameModeBase::PlayerPass()
  {
-
+    // = deadui 
  }
  void ABoongGameModeBase::PlayerFail()
  {
-
+     //TSubclassOf<UUserWidget> widget = Find
+     //Test()
+     //TestTest(MyWidget);
  }
+
+ void ABoongGameModeBase::TestCode()
+ { 
+     FStringClassReference MyWidget = (TEXT("/ Script / UMGEditor.WidgetBlueprint'/Game/SW/Blueprint/DeadUi.DeadUi_C'"));
+     
+     UClass* SwWidget = MyWidget.TryLoadClass<UUserWidget>();
+     
+     if(MyWidget.TryLoadClass<UUserWidget>() == nullptr) {
+
+     UE_LOG(LogTemp, Log, TEXT("HELLO"));
+     }
+
+     if (SwWidget)
+     {
+         UUserWidget* blackLinesWidget = CreateWidget<UUserWidget>(GetWorld(), SwWidget);
+         if (blackLinesWidget)
+             blackLinesWidget->AddToViewport();
+     }
+ }
+
 
  
- void ABoongGameModeBase::TestTest(TSubclassOf<UUserWidget> newWidgetClass)
- {
 
-     CurrentWidget = CreateWidget<UUserWidget>(GetWorld(), newWidgetClass);
-     CurrentWidget->AddToViewport();
- }
 
  void ABoongGameModeBase::BeginPlay()
  {    
      Super::BeginPlay();
+     /*
+     FStringClassReference MyWidget = (TEXT("WidgetBlueprint'/Game/SW/Blueprint/DeadUi_C'"));
+
+     UClass* SwWidget = MyWidget.TryLoadClass<UUserWidget>();
+
+     if (SwWidget)
+     {
+         UUserWidget* blackLinesWidget = CreateWidget<UUserWidget>(GetWorld(), SwWidget);
+         if (blackLinesWidget)
+             blackLinesWidget->AddToViewport();
+     }*/
      
  }
